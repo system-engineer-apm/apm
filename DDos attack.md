@@ -16,8 +16,6 @@ DOSLogDir           "/var/log/mod_evasive"
 
 sudo mkdir /var/log/mod_evasive
 sudo chown apache:apache /var/log/mod_evasive
-
 sudo systemctl restart httpd
-
 sudo tail -f /var/log/mod_evasive/dos-<IP>.log
 ```
