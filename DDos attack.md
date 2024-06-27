@@ -1,4 +1,4 @@
-## DDos 공격 방어
+# DDos 공격 방어
 ### ApacheBench(ab) 설치
 ```
 yum install httpd-tools
