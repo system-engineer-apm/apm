@@ -1,4 +1,4 @@
-##APM Source 설치
+# APM Source 설치
 ## EPEL 저장소를 설치
 ```
 sudo amazon-linux-extras install epel -y
@@ -11,7 +11,7 @@ yum -y install make gcc gcc-c++ ncurses-devel libevent openssl openssl-devel gnu
 yum -y install libtool expat-devel pcre-devel apr-devel apr-util libzip pcre-devel expat-devel apr-util-devel libdb-devel libpng-devel freetype-devel cmake
 ```
 
-##MariaDB 10.3.39 설치
+## MariaDB 10.3.39 설치
 ```
 mkdir -p /root/src
 cd /root/src
@@ -19,7 +19,7 @@ wget https://archive.mariadb.org/mariadb-10.3.39/source/mariadb-10.3.39.tar.gz
 tar xvfz mariadb-10.3.39.tar.gz
 cd mariadb-10.3.39
 ```
-##컴파일 및 설치
+## 컴파일 및 설치
 ```
 wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1.tar.gz
 tar -zxvf cmake-3.22.1.tar.gz
