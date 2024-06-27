@@ -70,3 +70,14 @@ symbolic-links=0
 [mysql]
 default-character-set=utf8
 ```
+
+## MariaDB 계정, 그룹 생성
+```
+useradd -M -s /bin/false mysql
+groupadd mysql
+useradd -g mysql mysql
+
+MariaDB 설치된 Mariadb 경로 권한 설정
+chown mysql:mysql /opt/mysql -R
+chmod 755 /opt/mysql -R
+```
