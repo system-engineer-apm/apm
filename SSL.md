@@ -1,6 +1,6 @@
 # SSL 설치 및 설정
 
-### Certbot써트봇과 Python2 기반의 Apache 플러그인을 설치
+### Certbot 과 Python2 기반의 Apache 플러그인을 설치
 ```
 yum install certbot python2-certbot-apache
 ```
