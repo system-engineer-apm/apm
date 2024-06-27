@@ -8,7 +8,7 @@ yum install mod_security
 
 ### OWASP CRS 설치
 ```
-cd /etc/httpd/modsecurity.d'
+cd /etc/httpd/modsecurity.d
 sudo yum install git -y
 sudo git clone https://github.com/coreruleset/coreruleset.git
 sudo mv coreruleset/* .
