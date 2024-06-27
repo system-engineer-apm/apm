@@ -11,15 +11,7 @@ yum -y install make gcc gcc-c++ ncurses-devel libevent openssl openssl-devel gnu
 yum -y install libtool expat-devel pcre-devel apr-devel apr-util libzip pcre-devel expat-devel apr-util-devel libdb-devel libpng-devel freetype-devel cmake
 ```
 
-### MariaDB 10.3.39 설치
-```
-mkdir -p /root/src
-cd /root/src
-wget https://archive.mariadb.org/mariadb-10.3.39/source/mariadb-10.3.39.tar.gz
-tar xvfz mariadb-10.3.39.tar.gz
-cd mariadb-10.3.39
-```
-### 컴파일 및 설치
+### Cmake 컴파일 및 설치
 ```
 wget https://github.com/Kitware/CMake/releases/download/v3.22.1/cmake-3.22.1.tar.gz
 tar -zxvf cmake-3.22.1.tar.gz
@@ -27,9 +19,17 @@ cd cmake-3.22.1
 ./bootstrap
 make
 make install
-
 vi ~/.bash_profile
 PATH=$PATH:/root/src/cmake-3.22.1/bin
+```
+
+### MariaDB 10.3.39 설치
+```
+mkdir -p /root/src
+cd /root/src
+wget https://archive.mariadb.org/mariadb-10.3.39/source/mariadb-10.3.39.tar.gz
+tar xvfz mariadb-10.3.39.tar.gz
+cd mariadb-10.3.39
 
 cmake -DCMAKE_INSTALL_PREFIX=/opt/mysql -DMYSQL_DATADIR=/opt/mysql/var -DMYSQL_UNIX_ADDR=/tmp/mysql.sock -DENABLED_LOCAL_INFILE=ON -DWITH_SSL=system -DWITH_ZLIB=system -DWITH_JEMALLOC=no -DWITH_ARIA_STORAGE_ENGINE=ON -DUSE_ARIA_FOR_TMP_TABLES=ON -DWITH_PARTITION_STORAGE_ENGINE=ON -DWITH_PERFSCHEMA_STORAGE_ENGINE=ON -DWITH_QUERY_CACHE_INFO=ON -DWITH_QUERY_RESPONSE_TIME=ON -DWITH_SAFEMALLOC=AUTO -DWITH_XTRADB_STORAGE_ENGINE=ON -DWITH_LOCALES=ON -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci -DWITH_EXTRA_CHARSETS=all -DWITHOUT_TOKUDB=1 
 
@@ -74,10 +74,6 @@ default-character-set=utf8
 ### MariaDB 계정, 그룹 생성
 ```
 useradd -M -s /bin/false mysql
-groupadd mysql
-useradd -g mysql mysql
-
-
 
 MariaDB 설치된 Mariadb 경로 권한 설정
 chown mysql:mysql /opt/mysql -R
