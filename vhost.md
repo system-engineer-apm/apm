@@ -35,7 +35,7 @@ vi vhost.conf
 </VirtualHost>
 ```
 
-### 도메인의 DNS 설정을 확인
+### 도메인의 DNS 설정 확인
 ```
 dig +short zkslqkf1778.duckdns.org
 ```
