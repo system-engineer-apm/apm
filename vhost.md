@@ -37,5 +37,5 @@ vi vhost.conf
 
 ### 도메인의 DNS 설정 확인
 ```
-dig +short zkslqkf1778.duckdns.org
+dig +short [도메인 주소]
 ```
